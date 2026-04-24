@@ -43,7 +43,7 @@ package ThermalTest
       height=25,
       duration=6,
       offset=25,
-      startTime=2) annotation (Placement(transformation(extent={{82,2},{62,22}})));
+      startTime=2) annotation (Placement(transformation(extent={{60,42},{40,62}})));
     Modelica.Blocks.Logical.OnOffController onOffController(bandwidth=TDif)
       annotation (Placement(transformation(extent={{0,-20},{-20,0}})));
     Modelica.Blocks.Logical.Not logicalNot
@@ -61,8 +61,8 @@ package ThermalTest
     connect(constantVoltage.p, idealSwitch.p) annotation (Line(points={{-90,
             -40},{-70,-40}}, color={0,0,255}));
     connect(idealSwitch.n, resistor.p) annotation (Line(points={{-50,-40},{-30,-40}}, color={0,0,255}));
-    connect(ramp.y, onOffController.reference) annotation (Line(points={{61,12},
-            {2,12},{2,-4}},              color={0,0,127}));
+    connect(ramp.y, onOffController.reference) annotation (Line(points={{39,52},
+            {2,52},{2,-4}},              color={0,0,127}));
     connect(temperatureSensor.T, onOffController.u) annotation (Line(points=
            {{10,-20},{10,-16},{2,-16}}, color={0,0,127}));
     connect(onOffController.y, logicalNot.u)
